@@ -3,69 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <title>Voice Room</title>
-</head>
-
-<body style="font-family:Arial;text-align:center;margin-top:60px">
-
-<h1>Voice Room</h1>
-
-<input id="username" placeholder="Your name">
-<br><br>
-
-<input id="roomId" placeholder="Room name">
-<br><br>
-
-<button id="join">Join Voice Room</button>
-<button id="mute">Mute Mic</button>
-<button id="raiseHand">✋ Raise Hand</button>
-<button id="gift">💎 Send Diamond</button>
-
-<p id="status"></p>
-
-<h3>🎤 Speaker Seats</h3>
-
-<div id="seats" style="display:flex;flex-wrap:wrap;justify-content:center;width:420px;margin:auto">
-
-<div class="seat">Empty</div>
-<div class="seat">Empty</div>
-<div class="seat">Empty</div>
-<div class="seat">Empty</div>
-<div class="seat">Empty</div>
-<div class="seat">Empty</div>
-<div class="seat">Empty</div>
-<div class="seat">Empty</div>
-
-</div>
-
-<h3>👥 Listeners</h3>
-<ul id="users"></ul>
-
-<h3>💎 Diamonds</h3>
-<p id="diamonds">0</p>
 
 <style>
 
-.seat{
-width:100px;
-height:60px;
-border:2px solid #444;
-margin:6px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:12px;
-background:#f2f2f2;
-cursor:pointer;
-font-weight:bold;
-transition:0.2s;
+body{
+font-family: Arial;
+text-align:center;
+background:#111;
+color:white;
 }
 
-.seat.speaking{
-background:#8cff8c;
-border-color:#0a0;
+h1{
+margin-top:20px;
+}
+
+#room{
+margin-top:40px;
+}
+
+button{
+padding:10px 20px;
+font-size:16px;
+margin:10px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+#mic{
+background:#28a745;
+color:white;
+}
+
+#mute{
+background:#dc3545;
+color:white;
 }
 
 </style>
+
+</head>
+
+<body>
+
+<h1>🎤 Voice Room</h1>
+
+<div id="room">
+
+<button id="mic">Turn Mic ON</button>
+<button id="mute">Mute</button>
+
+</div>
 
 <script src="app.js"></script>
 
