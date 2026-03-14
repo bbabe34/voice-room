@@ -13,15 +13,19 @@ wss.on("connection", (ws) => {
 
   ws.on("message", (message) => {
     wss.clients.forEach((client) => {
-      if (client !== ws && client.readyState === WebSocket.OPEN) {
+      if (client.readyState === WebSocket.OPEN) {
         client.send(message);
       }
     });
+  });
+
+  ws.on("close", () => {
+    console.log("User disconnected");
   });
 });
 
 const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => {
-  console.log("Server running on port " + PORT);
+  console.log("Server running on port", PORT);
 });

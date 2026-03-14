@@ -12,17 +12,11 @@ micBtn.onclick = async () => {
 
   ws = new WebSocket(`wss://${location.host}`);
 
-  ws.onmessage = (event) => {
-    const audio = new Audio();
-    audio.srcObject = new MediaStream([event.data]);
-    audio.play();
-  };
-
   const recorder = new MediaRecorder(localStream);
 
-  recorder.ondataavailable = (e) => {
-    if (ws.readyState === 1) {
-      ws.send(e.data);
+  recorder.ondataavailable = (event) => {
+    if (ws.readyState === WebSocket.OPEN) {
+      ws.send(event.data);
     }
   };
 
