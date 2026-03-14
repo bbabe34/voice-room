@@ -1,7 +1,7 @@
 {
   "name": "voice-room",
   "version": "1.0.0",
-  "description": "voice room app",
+  "description": "simmple voice room",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
